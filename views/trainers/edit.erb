@@ -1,0 +1,22 @@
+<h2>Edit Trainer</h2>
+<form action="/trainers/<%= @trainer.id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+
+  <label for="trainer[name]">Name:</label>
+  <input name="trainer[name]" value="<%= @trainer.name %>"><br>
+
+  <label for="trainer[level]">Level:</label>
+  <input name="trainer[level]" value="<%= @trainer.level %>"><br>
+
+  <label for="trainer[img_url]">Photo:</label>
+  <input name="trainer[img_url]" value="<%= @trainer.img_url %>"><br><br>
+
+
+  <input type="submit" value="Update">
+</form>
+
+<h2>Delete Trainer</h2>
+<form action="/trainers/<%= @trainer.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input class="button-delete" type="submit" value="Delete!">
+</form>

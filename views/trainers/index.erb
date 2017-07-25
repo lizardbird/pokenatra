@@ -1,0 +1,10 @@
+<h2>All Pokemon Trainers</h2>
+
+<ul>
+  <% @trainers.each do |train| %>
+  <li><a href="/trainers/<%= train.id %>"><%= train.name %></a></li>
+  <% end %>
+</ul>
+
+<a href="/trainers/new">Create New Trainer</a>
+<br><br>
