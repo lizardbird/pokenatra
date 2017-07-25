@@ -37,7 +37,7 @@ put '/pokemons/:id' do
 end
 
 delete '/pokemons/:id' do
-  @pokemons = Pokemon.find(params[:id])
-  @pokemons.destroy
+  @pokemon = Pokemon.find(params[:id])
+  @pokemon.destroy
   redirect '/pokemons'
 end
