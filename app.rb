@@ -32,6 +32,7 @@ get '/pokemons/new' do
 end
 
 get '/trainers/new' do
+  @teams = Team.all
   erb :"/trainers/new"
 end
 
