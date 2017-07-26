@@ -1,16 +1,31 @@
 <h2>Create New Pokemon</h2>
 
 <form action="/pokemons" method="post">
-    <label for="name">Pokemon Name:</label>
-    <input type="text" name="pokemon[name]"><br>
-    <label for="poke_type">Type:</label>
-    <input type="text" name="pokemon[poke_type]"><br>
-    <label for="cp">CP:</label>
-    <input type="text" name="pokemon[cp]"><br>
-    <label for="img_url">Photo:</label>
-    <input type="text" name="pokemon[img_url]">
-
-    <br><br>
+  <div class = "flex">
+    <div class="flex-item">
+      <label for="name">Name:</label>
+      <input type="text" name="pokemon[name]">
+    </div>
+    <div class="flex-item">
+      <label for="move">Move:</label>
+      <input type="text" name="pokemon[move]">
+    </div>
+    <div class="flex-item">
+      <label for="cp">CP:</label>
+      <input type="text" name="pokemon[cp]">
+    </div>
+    <div class="flex-item">
+      <label for="img_url">Photo:</label>
+      <input type="text" name="pokemon[img_url]">
+    </div>
+    <div class="flex-item">
+      <label for="trainer_id">Trainer:</label>
+      <select name = "pokemon[trainer_id]">
+        <% @trainers.each do |train| %>
+        <option value="<%= train.id %>"><%= train.name %></option>
+        <% end %>
+      </select>
+    </div>
     <input type="submit">
-
+  </div>
 </form>

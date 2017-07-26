@@ -16,6 +16,8 @@ GEM
     backports (3.8.0)
     coderay (1.1.1)
     concurrent-ruby (1.0.5)
+    faker (1.8.4)
+      i18n (~> 0.5)
     ffaker (2.6.0)
     i18n (0.8.6)
     method_source (0.8.2)
@@ -23,6 +25,7 @@ GEM
     multi_json (1.12.1)
     mustermann (1.0.0)
     pg (0.21.0)
+    pokemon_faker (0.1.2)
     pry (0.10.4)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -53,8 +56,10 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord
+  faker
   ffaker
   pg
+  pokemon_faker (~> 0.1.2)
   pry
   sinatra
   sinatra-contrib

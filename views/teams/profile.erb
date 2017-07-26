@@ -1,0 +1,12 @@
+<div class = "card">
+<h2><%= @team.name %></h2>
+<img src="<%= @team.img_url %>" alt="<%= @team.name %>" class = "poke_img">
+<br>
+<b>Trainers:</b>
+  <ul>
+    <% @team.trainers.each do |train| %>
+      <li><a href="/trainers/<%= train.id %>"><%= train.name %></a></li>
+    <% end %>
+  </ul>
+</p>
+</div>

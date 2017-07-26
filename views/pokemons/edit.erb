@@ -1,21 +1,32 @@
 <h2>Edit Pokemon</h2>
 <form action="/pokemons/<%= @pokemon.id %>" method="post">
-  <input type="hidden" name="_method" value="put">
+  <div class = "flex">
 
-  <label for="pokemon[name]">Name:</label>
-  <input name="pokemon[name]" value="<%= @pokemon.name %>"><br>
+    <input type="hidden" name="_method" value="put">
 
-  <label for="pokemon[poke_type]">Type:</label>
-  <input name="pokemon[poke_type]" value="<%= @pokemon.poke_type %>"><br>
+    <div class="flex-item">
+      <label for="pokemon[name]">Name:</label>
+      <input name="pokemon[name]" value="<%= @pokemon.name %>">
+    </div>
+    <div class="flex-item">
+      <label for="pokemon[cp]">CP:</label>
+      <input name="pokemon[cp]" value="<%= @pokemon.cp %>"><br>
+    </div>
+    <div class="flex-item">
+      <label for="pokemon[img_url]">Photo:</label>
+      <input name="pokemon[img_url]" value="<%= @pokemon.img_url %>">
+    </div>
+    <div class = "flex-item">
+      <label for="trainer_id">Trainer:</label>
+      <select name = "pokemon[trainer_id]">
+        <% @trainers.each do |train| %>
+        <option value="<%= train.id %>"><%= train.name %></option>
+        <% end %>
+      </select>
+    </div>
+    <input class= "button-submit" type="submit" value="Update">
+</div>
 
-  <label for="pokemon[cp]">CP:</label>
-  <input name="pokemon[cp]" value="<%= @pokemon.cp %>"><br>
-
-  <label for="pokemon[img_url]">Photo:</label>
-  <input name="pokemon[img_url]" value="<%= @pokemon.img_url %>"><br><br>
-
-
-  <input type="submit" value="Update">
 </form>
 
 <h2>Delete Pokemon</h2>

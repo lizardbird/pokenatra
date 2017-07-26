@@ -5,13 +5,18 @@
     <link rel="stylesheet" href="/css/pokestyle.css">
   </head>
   <body>
-    <%= yield %>
-    <br>
-    <br>
-    <div class="footer">
-      <a href="/pokemons">All Pokemons</a><br>
-      <a href="/trainers">All Trainers</a><br>
-      <a href="/">Back to Home</a>
+    <div class="sidebar">
+      <br>
+    <a href="/teams">All Teams</a>
+    <a href="/trainers">All Trainers</a>
+    <a href="/pokemons">All Pokemons</a>
     </div>
+    <div class="container">
+
+
+    <%= yield %>
+    </div>
+
+
   </body>
 </html>

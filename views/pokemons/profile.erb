@@ -1,8 +1,11 @@
-
+<div class = "card">
 <h2><%= @pokemon.name %></h2>
-<img src="<%= @pokemon.img_url %>" alt="<%= @pokemon.name %>" class = "profile_img">
-<p><b>Type:</b> <%= @pokemon.poke_type.capitalize %></p>
-<p><b>CP:</b> <%= @pokemon.cp %></p>
-
-
+<img src="<%= @pokemon.img_url %>" alt="<%= @pokemon.name %>" class = "poke_img">
+<p><b>CP:</b> <%= @pokemon.cp %><br>
+<b>Move:</b> <%= @pokemon.move %><br>
+<% if @pokemon.trainer %>
+  <b>Trainer:</b><a href="/trainers/<%= @pokemon.trainer.id %>"><%= @pokemon.trainer.name %></a></p>
+  <% end %>
+</div>
+<br>
 <a href='/pokemons/<%= @pokemon.id %>/edit'>Edit or Delete This Pokemon</a>

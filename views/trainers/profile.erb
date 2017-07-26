@@ -1,14 +1,15 @@
 
-
+<div class = "card">
 <h2><%= @trainer.name %></h2>
-<img src="<%= @trainer.img_url %>" alt="<%= @trainer.name %>" class = "profile_img">
-<p><b>Level:</b> <%= @trainer.level %></p>
-<p><b>Pokemon:</b></p>
+<img src="<%= @trainer.img_url %>" alt="<%= @trainer.name %>" class = "train_img">
+<p><b>Level:</b> <%= @trainer.level %><br>
+<b>Team:</b><a href="/teams/<%= @trainer.team.id %>"><%= @trainer.team.name %></a><br>
+<b>Pokemon:</b></p>
   <ul>
     <% @trainer.pokemons.each do |pokemon| %>
-      <li><%= pokemon.name %></li>
+      <li><a href="/pokemons/<%= pokemon.id %>"><%= pokemon.name %></a></li>
     <% end %>
   </ul>
-
-
+</div>
+<br>
 <a href='/trainers/<%= @trainer.id %>/edit'>Edit or Delete This Trainer</a>

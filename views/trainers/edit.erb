@@ -1,16 +1,28 @@
 <h2>Edit Trainer</h2>
 <form action="/trainers/<%= @trainer.id %>" method="post">
+  <div class = "flex">
+
   <input type="hidden" name="_method" value="put">
-
+<div class="flex-item">
   <label for="trainer[name]">Name:</label>
-  <input name="trainer[name]" value="<%= @trainer.name %>"><br>
-
+  <input name="trainer[name]" value="<%= @trainer.name %>">
+</div>
+<div class="flex-item">
   <label for="trainer[level]">Level:</label>
-  <input name="trainer[level]" value="<%= @trainer.level %>"><br>
-
+  <input name="trainer[level]" value="<%= @trainer.level %>">
+</div>
+<div class="flex-item">
   <label for="trainer[img_url]">Photo:</label>
-  <input name="trainer[img_url]" value="<%= @trainer.img_url %>"><br><br>
-
+  <input name="trainer[img_url]" value="<%= @trainer.img_url %>">
+</div>
+  <div class = "flex-item">
+    <label for="team_id">Team:</label>
+    <select name = "trainer[team_id]">
+      <% @teams.each do |team| %>
+      <option value="<%= team.id %>"><%= team.name %></option>
+      <% end %>
+    </select>
+  </div>
 
   <input type="submit" value="Update">
 </form>
